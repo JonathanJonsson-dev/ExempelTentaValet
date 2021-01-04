@@ -13,17 +13,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Uppgift1
+namespace Uppgift2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        int voteA = 0;
-        int voteB = 0;
-        int voteC = 0;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -31,34 +27,32 @@ namespace Uppgift1
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
-            if (radioBtn1.IsChecked == true)
-            {
-                voteA++;
-            }
-            else if (radioBtn2.IsChecked == true)
-            {
-                voteB++;
-            }
-            else
-            {
-                voteC++;
-            }
-        }
+            bool[] checkedValues = new bool[]
+{
+                (bool)chkModeraterna.IsChecked,
+                (bool)chkCenterpartiet.IsChecked,
+                (bool)chkLiberalerna.IsChecked,
+                (bool)chkKristdemokraterna.IsChecked,
+                (bool)chkSocialdemokraterna.IsChecked,
+                (bool)chkVänsterpartiet.IsChecked,
+                (bool)chkMiljöpartiet.IsChecked,
+                (bool)chkSveriedemokraterna.IsChecked};
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             VoteCounter voteCounter = new VoteCounter();
-            char winner = voteCounter.ElectionWinner(voteA, voteB, voteC);
+            int sum = voteCounter.CalculateMandate(checkedValues);
 
-            if (winner == 'X')
+            lblResult.Content = $"Resultat: {sum} av 349";
+
+            if (voteCounter.CheckMajority(sum))
             {
-                lbl.Content = $"Det går inte att avgöra vinnande alternativ";
+                lblMajority.Content = $"Majoritet Ja";
             }
             else
             {
-                lbl.Content = $"Alternativ {winner} fick flest röster.";
+                lblMajority.Content = $"Majoritet Nej";
+
             }
-            
+
         }
     }
 }

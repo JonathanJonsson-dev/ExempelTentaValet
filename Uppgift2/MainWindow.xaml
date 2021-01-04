@@ -1,0 +1,24 @@
+﻿<Window x:Class="Uppgift2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Uppgift2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="68,66,534,224" Orientation="Vertical">
+            <CheckBox x:Name="chkModeraterna" Content="Moderaterna" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <CheckBox x:Name="chkCenterpartiet" Content="Centerpartiet" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <CheckBox x:Name="chkLiberalerna" Content="Liberalerna" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <CheckBox x:Name="chkKristdemokraterna" Content="Kristdemokraterna" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <CheckBox x:Name="chkSocialdemokraterna" Content="Socialdemokraterna" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <CheckBox x:Name="chkVänsterpartiet" Content="Vänsterpartiet" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <CheckBox x:Name="chkMiljöpartiet" Content="Miljöpartiet de gröna" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <CheckBox x:Name="chkSveriedemokraterna" Content="Sverigedemokraterna" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+        <Label x:Name="lblResult" HorizontalAlignment="Left" Margin="480,134,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMajority" HorizontalAlignment="Left" Margin="490,192,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn" Click="btn_Click" Content="Fördela mandat" HorizontalAlignment="Left" Margin="101,240,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

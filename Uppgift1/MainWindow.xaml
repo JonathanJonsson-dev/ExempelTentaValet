@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Label Content="Folkomröstning" HorizontalAlignment="Left" Margin="256,180,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Tycker du att Tibro kommun ska genomföra en återuppbyggnad av en kommunal driven gymnasieskola i Tibro?" HorizontalAlignment="Center" Margin="0,211,0,0" VerticalAlignment="Top" Height="90" Width="622"/>
+        <RadioButton x:Name="radioBtn1" Content="Nej alternativ A" HorizontalAlignment="Left" Margin="156,321,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioBtn2" Content="Ja alternativ B" HorizontalAlignment="Left" Margin="156,342,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioBtn3" Content="Ingen åsikt alternativ C" HorizontalAlignment="Left" Margin="156,362,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn" Content="Rösta" HorizontalAlignment="Left" Margin="420,349,0,0" VerticalAlignment="Top" Width="92" Click="btn_Click"/>
+        <Button Content="Presentera vinnare" Click="Button_Click" HorizontalAlignment="Left" Margin="530,136,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl" HorizontalAlignment="Left" Margin="610,362,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
