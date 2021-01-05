@@ -31,5 +31,39 @@ namespace Uppgift3
             }
             return null;
         }
+
+        public int TotalVotes()
+        {
+            int totalVotes = 0;
+            foreach (Party party in Parties)
+            {
+                totalVotes += party.NumberOfVotes;
+            }
+            return totalVotes;
+        }
+
+        private void CalculatePercentage()
+        {
+            foreach (Party party in Parties)
+            {
+                party.Percentage = party.NumberOfVotes / (double)TotalVotes();
+            }
+        }
+
+        public List<Party> GetRiksdagParties()
+        {
+            List<Party> partiesAboveLimit = new List<Party>();
+            CalculatePercentage();
+
+            foreach (Party party in Parties)
+            {
+                if (party.Percentage >= 0.04)
+                {
+                    partiesAboveLimit.Add(party);
+                }
+            }
+            return partiesAboveLimit;
+        }
+
     }
 }

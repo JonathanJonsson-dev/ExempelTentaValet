@@ -21,6 +21,7 @@
         <TextBox x:Name="txtBoxSearch" HorizontalAlignment="Left" Margin="380,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnSearch" Click="btnSearch_Click" Content="Sök" HorizontalAlignment="Left" Margin="585,399,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblSearchResult" HorizontalAlignment="Left" Margin="663,399,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnShowParties" Content="Visa riksdagspartier" Click="btnShowParties_Click" HorizontalAlignment="Left" Margin="116,70,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

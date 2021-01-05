@@ -25,10 +25,44 @@ namespace Uppgift3
             InitializeComponent();
         }
         Election election = new Election();
+
+        public bool CheckName(string name, string abbreviation)
+        {
+            int count = 0;
+            string nameUpper =  name.ToUpper();
+            string abbreviationUpper = abbreviation.ToUpper();
+
+            foreach (char letter in nameUpper)
+            {
+                for (int i = 0; i < abbreviationUpper.Length; i++)
+                {
+                    if (letter == abbreviationUpper[i])
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            if (count == 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void btn_Click(object sender, RoutedEventArgs e)
         {
+            if (CheckName(txtBoxName.Text, txtBoxAbbreviation.Text) == true)
+            {
+                election.AddParty(txtBoxName.Text, txtBoxAbbreviation.Text, int.Parse(txtBoxReport.Text));
+            }
+            else
+            {
+                MessageBox.Show("Fel format");
+            }
             
-            election.AddParty(txtBoxName.Text, txtBoxAbbreviation.Text, int.Parse(txtBoxReport.Text));
         }
 
         private void btnReport_Click(object sender, RoutedEventArgs e)
@@ -61,6 +95,13 @@ namespace Uppgift3
                 lblSearchResult.Content = searchResult.Name;
             }
             
+        }
+
+        private void btnShowParties_Click(object sender, RoutedEventArgs e)
+        {
+            lstBox.ItemsSource = null;
+            lstBox.ItemsSource = election.GetRiksdagParties();
+
         }
     }
 }
